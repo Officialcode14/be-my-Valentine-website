@@ -4,8 +4,8 @@ const noBtn = document.getElementById('noBtn');
 const yesBtn = document.getElementById('yesBtn');
 
 // Replace with YOUR real direct links
-const backgroundImageUrl = "https://i.postimg.cc/YOUR_FLOWER_BACKGROUND_ID.jpg";
-const couplePhotoUrl = "https://i.postimg.cc/YOUR_COUPLE_PHOTO_ID.jpg"; // already in HTML
+const backgroundImageUrl = "https://i.postimg.cc/dVqX4YL8/Whats-App-Image-2026-02-04-at-6-47-19-AM.jpg";
+const couplePhotoUrl = "https://i.postimg.cc/qB35Z292/Whats-App-Image-2026-02-05-at-4-41-24-AM.jpg"; // already in HTML
 
 const pleas = [
     "S'il te plaît ? / Please?",
@@ -34,13 +34,13 @@ noBtn.addEventListener('mouseover', () => {
 });
 
 yesBtn.addEventListener('click', () => {
-    // Change background
+    // Change background to flower image
     document.body.style.backgroundImage = `url('${backgroundImageUrl}')`;
     document.body.style.backgroundSize = "cover";
     document.body.style.backgroundPosition = "center";
     document.body.style.backgroundRepeat = "no-repeat";
     document.body.style.backgroundAttachment = "fixed";
-    document.body.style.backgroundColor = "rgba(0, 0, 0, 0.45)";
+    document.body.style.backgroundColor = "rgba(0, 0, 0, 0.45)"; // keep subtle dark overlay
     document.body.style.backgroundBlendMode = "multiply";
 
     // Floating hearts
@@ -63,16 +63,18 @@ yesBtn.addEventListener('click', () => {
         console.log("Autoplay prevented:", error);
     });
 
-    // Apply frosted glass / glassmorphism effect
+    // Make container completely transparent after "Yes!"
     const container = document.querySelector('.container');
-    container.style.background = 'rgba(255, 255, 255, 0.12)';
-    container.style.backdropFilter = 'blur(12px)';
-    container.style.border = '1px solid rgba(255, 255, 255, 0.25)';
-    container.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.25)';
+    container.style.background = 'transparent';
+    container.style.backdropFilter = 'none';
+    container.style.border = 'none';
+    container.style.boxShadow = 'none';
+    container.style.padding = '20px'; // keep a bit of padding so text doesn't touch edges
 
     // Celebration message
     alert("Youpi ! Alice a dit OUI ! ❤️\nYay! Alice said YES! ❤️");
 });
+
 
 
 
