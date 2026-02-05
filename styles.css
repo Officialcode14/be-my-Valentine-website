@@ -71,4 +71,18 @@ button {
 @keyframes float {
     0% { opacity: 1; transform: translateY(0) rotate(0deg); }
     100% { opacity: 0; transform: translateY(-120vh) rotate(360deg); }
+
+}
+.couple-photo {
+    margin: 25px auto;
+    max-width: 280px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+.couple-photo img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
