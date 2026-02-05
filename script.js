@@ -19,15 +19,19 @@ const pleas = [
 let pleaIndex = 0;
 
 noBtn.addEventListener('mouseover', () => {
-    // Move button randomly
-    const x = Math.random() * (window.innerWidth - noBtn.offsetWidth - 150);
-    const y = Math.random() * (window.innerHeight - noBtn.offsetHeight - 150);
+    // Keep the button inside a safe area (80% of screen width/height)
+    const maxX = window.innerWidth * 0.8;
+    const maxY = window.innerHeight * 0.8;
+    
+    const x = Math.random() * maxX;
+    const y = Math.random() * maxY;
     
     noBtn.style.position = 'absolute';
     noBtn.style.left = `${x}px`;
     noBtn.style.top = `${y}px`;
+    noBtn.style.transform = `scale(${0.8 + Math.random() * 0.4})`;  // makes it slightly smaller sometimes
     
-    // Change text
+    // Change text to desperate message
     noBtn.textContent = pleas[pleaIndex];
     pleaIndex = (pleaIndex + 1) % pleas.length;
 });
@@ -58,4 +62,5 @@ yesBtn.addEventListener('click', () => {
     }
 
     alert("Yay! Alice said YES! ❤️");
+
 });
