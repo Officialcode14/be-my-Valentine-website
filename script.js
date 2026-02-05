@@ -1,0 +1,61 @@
+// --- script.js - clean version ---
+
+const noBtn = document.getElementById('noBtn');
+const yesBtn = document.getElementById('yesBtn');
+
+// Replace this with YOUR real direct image link
+const backgroundImageUrl = "https://i.postimg.cc/ZKVj7BBF/Whats-App-Image-2026-02-04-at-6-47-19-AM.jpg";
+// ↑ Paste your link here — keep the quotes! Example: "https://i.ibb.co/abc123xyz/photo.jpg"
+
+const pleas = [
+    "Please?",
+    "I'll be sad...",
+    "You're breaking my heart!",
+    "Think again!",
+    "Pretty please? 🥺",
+    "Come on, say yes...",
+    "I'm begging you!"
+];
+let pleaIndex = 0;
+
+noBtn.addEventListener('mouseover', () => {
+    // Move button randomly
+    const x = Math.random() * (window.innerWidth - noBtn.offsetWidth - 150);
+    const y = Math.random() * (window.innerHeight - noBtn.offsetHeight - 150);
+    
+    noBtn.style.position = 'absolute';
+    noBtn.style.left = `${x}px`;
+    noBtn.style.top = `${y}px`;
+    
+    // Change text
+    noBtn.textContent = pleas[pleaIndex];
+    pleaIndex = (pleaIndex + 1) % pleas.length;
+});
+
+yesBtn.addEventListener('click', () => {
+    // Set background image
+    document.body.style.backgroundImage = `url('${backgroundImageUrl}')`;
+    document.body.style.backgroundSize = "cover";
+    document.body.style.backgroundPosition = "center";
+    document.body.style.backgroundRepeat = "no-repeat";
+    document.body.style.backgroundAttachment = "fixed";
+
+    // Dark overlay for readability
+    document.body.style.backgroundColor = "rgba(0, 0, 0, 0.45)";
+    document.body.style.backgroundBlendMode = "multiply";
+
+    // Floating hearts
+    for (let i = 0; i < 40; i++) {
+        const heart = document.createElement('div');
+        heart.classList.add('floating-heart');
+        heart.textContent = ['❤️', '💖', '💕', '💗'][Math.floor(Math.random() * 4)];
+        heart.style.left = `${Math.random() * 100}vw`;
+        heart.style.animationDelay = `${Math.random() * 3}s`;
+        heart.style.animationDuration = `${3 + Math.random() * 3}s`;
+        document.body.appendChild(heart);
+        
+        setTimeout(() => heart.remove(), 7000);
+    }
+
+    alert("Yay! Alice said YES! ❤️");
+});
