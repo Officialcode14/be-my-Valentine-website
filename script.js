@@ -8,13 +8,13 @@ const backgroundImageUrl = "https://i.postimg.cc/ZKVj7BBF/Whats-App-Image-2026-0
 // ↑ Paste your link here — keep the quotes! Example: "https://i.ibb.co/abc123xyz/photo.jpg"
 
 const pleas = [
-    "Please?",
-    "I'll be sad...",
-    "You're breaking my heart!",
-    "Think again!",
-    "Pretty please? 🥺",
-    "Come on, say yes...",
-    "I'm begging you!"
+    "S'il te plaît ? / Please?",
+    "Je vais être triste... / I'll be sad...",
+    "Tu me brises le cœur ! / You're breaking my heart!",
+    "Réfléchis encore ! / Think again!",
+    "Pretty please ? 🥺 / S'il te plaît ?",
+    "Allez, dis oui... / Come on, say yes...",
+    "Je t'en supplie ! / I'm begging you!"
 ];
 let pleaIndex = 0;
 
@@ -61,6 +61,7 @@ yesBtn.addEventListener('click', () => {
         setTimeout(() => heart.remove(), 7000);
     }
 
-    alert("Yay! Alice said YES! ❤️");
+    alert("Youpi ! Alice a dit OUI ! ❤️\nYay! Alice said YES! ❤️");
 
 });
+
