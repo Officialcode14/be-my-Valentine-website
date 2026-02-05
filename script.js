@@ -60,8 +60,17 @@ yesBtn.addEventListener('click', () => {
         
         setTimeout(() => heart.remove(), 7000);
     }
+    // Play her favorite song
+const song = document.getElementById('loveSong');
+song.volume = 0.4;           // 40% volume – not too loud
+song.currentTime = 0;        // start from beginning
+song.play().catch(error => {
+    console.log("Autoplay prevented:", error);
+    // Optional: alert("Click anywhere to play music ❤️");
+});
 
     alert("Youpi ! Alice a dit OUI ! ❤️\nYay! Alice said YES! ❤️");
 
 });
+
 
